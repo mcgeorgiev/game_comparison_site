@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<h1>Downloadable Game Price Comparison</h1>
+	<br>
+	<form action="" method="post">
+		<input type="text" placeholder="Enter Game Name" name="game_name" value="{{request.form.game_name}}">
+		<input class="btn btn-default" type="submit" value="Enter">
+		
+		<br>
+		<input type="checkbox" name="check" value="DLC"> Show DLC or Expansions
+	</form>
+
+	{% if error %}
+		<p class="error"><strong>Error:</strong> {{ error }}</p>
+	{% endif %}
+
+	{% if entry %}
+		<p class="entry"><strong>Search entry:</strong> {{ entry}}</p>
+		<table class="table table-hover table condensed">
+		<tr>
+			<th class="name">Name</th>
+			<th class="site_name">Website</th>
+			<th class="full_price">Full Price</th>
+			<th class="discount">Discount (%)</th>
+			<th class="current_price">Current Price</th>
+		</tr>
+		{% for row in data %}
+			<tr>
+				<td>{{row['title']}}</td>
+				<td>{{row['vendor']}}</td>
+				<td>{{row['full_price']}}</td>
+				<td>{{row['discount']}}</td>
+				<td>{{row['current_price']}}</td>	
+			</tr>
+		{% endfor %}
+	{% endif %}
+{% endblock %}
+	
