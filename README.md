@@ -6,7 +6,8 @@
 - Features toggle DLC
 
 Issues (numerous):
-1. Unicode headaches
+
+1. Unicode headaches.
 2. Humble Bundle does not indicate if DLC. Dunno what to do!
-3. Ugly webpage, add image icons
+3. Ugly webpage, add image icons.
 
